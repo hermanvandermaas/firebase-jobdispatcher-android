@@ -65,10 +65,10 @@ task javadocs(type: Javadoc) {
     failOnError false
 }
 
-task javadocsJar(type: Jar, dependsOn: javadocs) {
+task javadocsJar(type: Jar, dependsOn: javadoc) {
     description "Package Javadocs into a jar"
     classifier = "javadoc"
-    from javadocs.destinationDir
+    from javadoc.destinationDir
 }
 
 task sourcesJar(type: Jar) {
