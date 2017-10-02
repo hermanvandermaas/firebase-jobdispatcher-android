@@ -57,7 +57,7 @@ dependencies {
     androidTestCompile 'com.android.support.test:runner:0.5'
 }
 
-task javadocs(type: Javadoc) {
+task javadoc(type: Javadoc) {
     description "Generate Javadocs"
     source = android.sourceSets.main.java.sourceFiles
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
@@ -65,7 +65,7 @@ task javadocs(type: Javadoc) {
     failOnError false
 }
 
-task javadocsJar(type: Jar, dependsOn: javadoc) {
+task javadocJar(type: Jar, dependsOn: javadoc) {
     description "Package Javadocs into a jar"
     classifier = "javadoc"
     from javadoc.destinationDir
